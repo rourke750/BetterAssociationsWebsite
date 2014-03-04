@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Better Associations</title><!--Page title-->
+		<meta name="description" content=""><!--Page description-->
+		<meta name="keywords" content=""><!--Tags for web searches-->
+	</head>
+	<body>
+		<div align="CENTER" class="top">
+			<h1>Better Associates</h1>
+			<ul id="tabs">
+				<li class="tab1"><a href="/">Home</a></li>
+				<li class="tab2"><a href="/about">About</a></li>
+				<li class="tab3"><a href="/contact">Contact Us</a></li>
+			</ul>
+		</div>
+		<br>
+		<div align="CENTER" class="login">
+			<h2 class="tl">Login</h2>
+			<form method="POST" action="LoginAccount.php" id="login">
+				Username:<input type="text" name="username">
+				<br>
+				Password: <input type="password" name="password">
+				<input type="hidden" value="%SECRET_KEY%" id="key">
+				<br>
+				<input type="submit" value="Go!">
+			</form>
+			<script>
+				//document.login.key.value = randomName(16);
+				key = document.getElementById("key");
+				key.value = "_" + randomName(16);
+				function randomName(len)
+				{
+	    				var text = "";
+	 				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+					for(var i = 0; i < len; i++ ) text += possible.charAt(Math.floor(Math.random() * possible.length));
+					return text;
+				}
+			</script>
+		</div>
+	</body>
+	<style>
+		body{
+			background: #454545;
+		}
+		.top{
+			background: #272727;
+			font-family: 'Verdana';
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		.login{
+			background: #272727;
+			font-family: 'Verdana';
+			padding-top: 3px;
+			padding-bottom: 3px;
+			color: #ababab;
+		}
+		.tl{
+			color: #000000;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style-type: none;
+		}
+		#tabs{
+			display: table;
+			table-layout: fixed;
+			text-align: center;
+		}
+		#tabs li{
+			display: table-cell;
+			width: 10%;
+			padding-right: 1px;
+			height: auto;
+			vertical-align: bottom;
+		}
+		#tabs a{
+			display: block;
+			min-height: 100%;
+			padding: 4px 10px;
+			background-color: #444;
+			color: white;
+			border-radius: 6px 6px 0 0;
+			text-decoration: none;
+		}
+		#tabs a:hover{
+			background-color: #333;
+
+		}
+	</style>
+</html>
+<!--
+	What are we doing?
+		-Login Form
+		-Create Account Form
+		-Acount Info Page
+-->
